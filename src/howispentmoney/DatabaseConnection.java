@@ -1,13 +1,20 @@
 package howispentmoney;
 
 import java.sql.*;
+import javax.swing.JFrame;
 
 public class DatabaseConnection {
+    static String user = null;
 
+    public static String getUser() {
+        return user;
+    }
+    
     public static String login_check(String user, String password) {
         Connection connect = null;
         Statement s = null;
         String userid = null;
+        
         try {
             
             connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\tang-pc\\Documents\\NetBeansProjects\\HowISpentMoney\\.derby\\db_hism", "", "");
@@ -36,10 +43,16 @@ public class DatabaseConnection {
             return null;
         }
         System.out.println("login success");
+        
+//        frame.setVisible(false);
+        user = userid;
         return userid;
     }
-    public static void main(String[] args) {
-        
-        System.out.println(login_check("admin", "password"));
-    }
+//    public static void main(String[] args) {
+//        
+//        System.out.println(login_check("admin", "password"));
+//    }
+
+
 }
+
