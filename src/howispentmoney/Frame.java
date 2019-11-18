@@ -5,6 +5,9 @@
  */
 package howispentmoney;
 
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -16,11 +19,10 @@ public class Frame extends javax.swing.JFrame {
 
     /**
      * Creates new form Frame
+     * @param pane
      */
-    public Frame() {
+    public void Frame(Container pane) {
         initComponents();
-        jPanel1.add(new Dashboard());
-        jPanel1.add(new Activity());
     }
     
 //    private void showDashboard(JPanel pn) {

@@ -87,7 +87,7 @@ public class Dashboard extends javax.swing.JPanel {
 
         
     private void activitybuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activitybuttonActionPerformed
-        Main.changePanel(new Activity());
+        Main.demo.toAct();
     }//GEN-LAST:event_activitybuttonActionPerformed
 
 
