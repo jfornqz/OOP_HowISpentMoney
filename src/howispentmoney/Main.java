@@ -17,8 +17,9 @@ public class Main {
     }
     
     public static void main(String[] args) {
-//        JFrame frame = new Login();
-        main_frame.setVisible(true);
+        JFrame frame = new Login();
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         demo.addComponentToPane(main_frame.getContentPane());
     }
