@@ -24,7 +24,7 @@ public class Activity extends javax.swing.JPanel {
             show_user();
             System.out.println(Login.username_tf.getText());
     }
-    public ArrayList<Userdata> userData(){
+    public static ArrayList<Userdata> userData(){
         Connection connect = null;
         Statement s = null;
         String userid = null;
