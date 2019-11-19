@@ -5,9 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Main {
-    
     static Frame main_frame = new Frame();
-    static CardLayoutDemo demo = new CardLayoutDemo();
+    static CardLayoutDemo demo;
     
     @Deprecated
     public static void changePanel(JPanel pn) {
@@ -21,7 +20,6 @@ public class Main {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        demo.addComponentToPane(main_frame.getContentPane());
     }
     
 }

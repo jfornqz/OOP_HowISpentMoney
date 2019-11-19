@@ -1,4 +1,8 @@
 package howispentmoney;
+
+import static howispentmoney.Main.demo;
+import javax.swing.JTextField;
+
 public class Login extends javax.swing.JFrame {
     
     /**
@@ -7,7 +11,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -18,7 +22,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        username = new javax.swing.JTextField();
+        username_tf = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -57,7 +61,7 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(username_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -74,7 +78,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(username_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -90,9 +94,11 @@ public class Login extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
 //        System.out.println(DatabaseConnection.login_check(username.getText() ,password.getText()));
-        String current_user = DatabaseConnection.login_check(username.getText(), password.getText());
+        String current_user = DatabaseConnection.login_check(username_tf.getText(), password.getText());
         System.out.println(current_user);
         if(current_user != null) {
+            Main.demo = new CardLayoutDemo();
+            demo.addComponentToPane(Main.main_frame.getContentPane());
             Main.main_frame.setVisible(true);
             this.setVisible(false);
         } else {
@@ -101,7 +107,7 @@ public class Login extends javax.swing.JFrame {
         }
 //        user = DatabaseConnection.login_check(username.getText() ,password.getText());
     }//GEN-LAST:event_loginActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
@@ -144,7 +150,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton login;
     private javax.swing.JPasswordField password;
-    private javax.swing.JTextField username;
+    public static javax.swing.JTextField username_tf;
     // End of variables declaration//GEN-END:variables
 
 }

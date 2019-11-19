@@ -7,6 +7,7 @@ package howispentmoney;
 
 import java.awt.Component;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 /**
  *
@@ -18,7 +19,11 @@ public class Dashboard extends javax.swing.JPanel {
      */
     public Dashboard() {
         initComponents();
-        System.out.println("I Kuy ");
+        
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
     }
 
     /**
@@ -57,7 +62,7 @@ public class Dashboard extends javax.swing.JPanel {
 
         expend_tf.setText("Expend");
 
-        jLabel1.setText("asdasd");
+        jLabel1.setText(DatabaseConnection.user_name);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -80,7 +85,7 @@ public class Dashboard extends javax.swing.JPanel {
                         .addGap(30, 30, 30)
                         .addComponent(activitybutton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
+                        .addGap(145, 145, 145)
                         .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -89,9 +94,9 @@ public class Dashboard extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(activitybutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
                 .addComponent(jLabel1)
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(income_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

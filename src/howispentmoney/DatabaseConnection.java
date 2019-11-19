@@ -2,6 +2,7 @@ package howispentmoney;
 
 import java.sql.*;
 import javax.swing.JFrame;
+import java.util.Calendar;
 
 public class DatabaseConnection {
     static String user_name;
@@ -43,6 +44,7 @@ public class DatabaseConnection {
         
 //        frame.setVisible(false);
         user_name = userid;
+        System.out.println(DatabaseConnection.user_name);
         return userid;
     }
     public static void insert_data(String ex_des, double incomeValue, double expendValue) {
@@ -65,7 +67,7 @@ public class DatabaseConnection {
                 sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','Income',"+incomeValue+")";
                 s.executeUpdate(sql);
                 tp = "Ex";
-                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','"+ex_des+"',"+incomeValue+")";
+                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','"+ex_des+"',"+expendValue+")";
             }
             s.executeUpdate(sql);//row data
             System.out.println(user_name);
@@ -83,5 +85,6 @@ public class DatabaseConnection {
             e.printStackTrace();
         }    
     }
+    
 }
 
