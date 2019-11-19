@@ -23,76 +23,74 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         username_tf = new javax.swing.JTextField();
-        login = new javax.swing.JButton();
+        login_bn = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
-        setPreferredSize(new java.awt.Dimension(250, 250));
-        setSize(new java.awt.Dimension(250, 250));
+        setPreferredSize(new java.awt.Dimension(350, 560));
+        setResizable(false);
+        setSize(new java.awt.Dimension(350, 560));
+        getContentPane().setLayout(null);
 
-        jLabel1.setText("How I Spend Money");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Login");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(70, 180, 80, 30);
 
-        login.setText("Login");
-        login.addActionListener(new java.awt.event.ActionListener() {
+        username_tf.setBorder(null);
+        getContentPane().add(username_tf);
+        username_tf.setBounds(70, 240, 210, 30);
+
+        login_bn.setBackground(new java.awt.Color(0, 204, 204));
+        login_bn.setForeground(new java.awt.Color(255, 255, 255));
+        login_bn.setText("Login");
+        login_bn.setBorder(null);
+        login_bn.setBorderPainted(false);
+        login_bn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
+                login_bnActionPerformed(evt);
             }
         });
+        getContentPane().add(login_bn);
+        login_bn.setBounds(70, 340, 210, 30);
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Username");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(70, 220, 60, 15);
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Password");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(70, 270, 60, 16);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(username_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(login)))
-                .addContainerGap(47, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(username_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(login)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
+        password.setBorder(null);
+        getContentPane().add(password);
+        password.setBounds(70, 290, 210, 30);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("O");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(160, 50, 50, 80);
+
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/hismloginbg.jpg"))); // NOI18N
+        getContentPane().add(bg);
+        bg.setBounds(0, 0, 350, 560);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+    
+    private void login_bnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_bnActionPerformed
 //        System.out.println(DatabaseConnection.login_check(username.getText() ,password.getText()));
         String current_user = DatabaseConnection.login_check(username_tf.getText(), password.getText());
         System.out.println(current_user);
@@ -106,7 +104,7 @@ public class Login extends javax.swing.JFrame {
             return;
         }
 //        user = DatabaseConnection.login_check(username.getText() ,password.getText());
-    }//GEN-LAST:event_loginActionPerformed
+    }//GEN-LAST:event_login_bnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,10 +143,12 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bg;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton login;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton login_bn;
     private javax.swing.JPasswordField password;
     public static javax.swing.JTextField username_tf;
     // End of variables declaration//GEN-END:variables
