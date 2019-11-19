@@ -13,12 +13,13 @@ import javax.swing.JComboBox;
  * @author tang-pc
  */
 public class Dashboard extends javax.swing.JPanel {
-
+    static String text1;
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
         initComponents();
+        System.out.println(text1);
     }
 
     /**
@@ -35,6 +36,7 @@ public class Dashboard extends javax.swing.JPanel {
         activitybutton = new javax.swing.JButton();
         income_tf = new javax.swing.JTextField();
         expend_tf = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Food", "Travel", "Shopping", "Other" }));
 
@@ -56,6 +58,8 @@ public class Dashboard extends javax.swing.JPanel {
 
         expend_tf.setText("Expend");
 
+        jLabel1.setText(text1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,16 +76,23 @@ public class Dashboard extends javax.swing.JPanel {
                             .addComponent(expend_tf))))
                 .addGap(48, 48, 48))
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(activitybutton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(activitybutton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(66, 66, 66)
                 .addComponent(activitybutton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(13, 13, 13)
                 .addComponent(income_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -114,5 +125,6 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JTextField income_tf;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
