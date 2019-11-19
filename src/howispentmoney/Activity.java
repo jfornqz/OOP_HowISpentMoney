@@ -89,9 +89,9 @@ public class Activity extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable_Display);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText(DatabaseConnection.user_name);
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText(DatabaseConnection.getMonth());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

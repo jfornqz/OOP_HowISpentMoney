@@ -65,7 +65,7 @@ public class Dashboard extends javax.swing.JPanel {
 
         jLabel1.setText(DatabaseConnection.user_name);
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText(DatabaseConnection.getMonth());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
