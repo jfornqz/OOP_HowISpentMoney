@@ -111,9 +111,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="text1" type="code"/>
-        </Property>
+        <Property name="text" type="java.lang.String" value="asdasd"/>
       </Properties>
     </Component>
   </SubComponents>

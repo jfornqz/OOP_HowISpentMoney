@@ -13,13 +13,12 @@ import javax.swing.JComboBox;
  * @author tang-pc
  */
 public class Dashboard extends javax.swing.JPanel {
-    static String text1;
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
         initComponents();
-        System.out.println(text1);
+        System.out.println("I Kuy ");
     }
 
     /**
@@ -58,7 +57,7 @@ public class Dashboard extends javax.swing.JPanel {
 
         expend_tf.setText("Expend");
 
-        jLabel1.setText(text1);
+        jLabel1.setText("asdasd");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

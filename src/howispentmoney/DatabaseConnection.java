@@ -43,7 +43,6 @@ public class DatabaseConnection {
         
 //        frame.setVisible(false);
         user_name = userid;
-        Dashboard.text1 = userid;
         return userid;
     }
     public static void insert_data(String ex_des, double incomeValue, double expendValue) {
@@ -58,8 +57,16 @@ public class DatabaseConnection {
             if (incomeValue == 0 && expendValue != 0){
                 tp = "Ex";
                 sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','"+ex_des+"',"+expendValue+")";
-                
-        }
+            }else if(incomeValue != 0 && expendValue == 0){
+                tp = "In";
+                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','Income',"+incomeValue+")";
+            }else if(incomeValue != 0 && expendValue != 0){
+                tp = "In";
+                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','Income',"+incomeValue+")";
+                s.executeUpdate(sql);
+                tp = "Ex";
+                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','"+ex_des+"',"+incomeValue+")";
+            }
             s.executeUpdate(sql);//row data
             System.out.println(user_name);
             System.out.println("Complete");

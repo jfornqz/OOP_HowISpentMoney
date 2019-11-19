@@ -1,6 +1,6 @@
 package howispentmoney;
 public class Login extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Dashboard
      */
