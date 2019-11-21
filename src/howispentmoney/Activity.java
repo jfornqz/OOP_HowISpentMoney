@@ -7,6 +7,7 @@ package howispentmoney;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,13 +32,16 @@ public class Activity extends javax.swing.JPanel {
         ArrayList<Userdata> userData = new ArrayList<>();
         try{
             connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
-            String sql = "select * FROM APP.USERDATA WHERE USERNAME = '"+DatabaseConnection.user_name+"'";
+            String sql = "SELECT USERNAME, DATE(TIMESTAMP) AS TIME, MONTH(TIMESTAMP) AS MONTH , TYPE, TYPE_DES, VALUE FROM APP.USERDATA WHERE USERNAME = '"+DatabaseConnection.user_name+"'";
             s = connect.createStatement();
             ResultSet rec = s.executeQuery(sql);
             Userdata theData;
+            Calendar calendar = Calendar.getInstance();
             while(rec.next()){
-                theData = new Userdata(rec.getTimestamp("TIMESTAMP"), rec.getString("TYPE"), rec.getString("TYPE_DES"), rec.getDouble("VALUE"));
-                userData.add(theData);
+                if (rec.getInt("MONTH")==(calendar.get(Calendar.MONTH)+1)){
+                    theData = new Userdata(rec.getDate("TIME"), rec.getString("TYPE"), rec.getString("TYPE_DES"), rec.getDouble("VALUE"));
+                    userData.add(theData);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,7 +51,7 @@ public class Activity extends javax.swing.JPanel {
     }
     public void show_user(){
         ArrayList<Userdata> list = userData();
-        DefaultTableModel model = (DefaultTableModel)jTable_Display.getModel();
+        DefaultTableModel model = (DefaultTableModel)jTable_Display.getModel();        
         Object[] row = new Object[4];
         for (int i=0; i<list.size(); i++){
             row[0] = list.get(i).getTIMESTAMP();
@@ -84,7 +88,7 @@ public class Activity extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Time", "Type", "Type Des", "Value"
+                "Date", "Type", "Type Des", "Value"
             }
         ));
         jScrollPane1.setViewportView(jTable_Display);

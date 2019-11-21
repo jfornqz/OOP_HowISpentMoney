@@ -16,7 +16,6 @@ public class Main {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        DatabaseConnection.getMonth();
     }
     
 }

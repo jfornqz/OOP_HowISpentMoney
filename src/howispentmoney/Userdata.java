@@ -5,6 +5,7 @@
  */
 package howispentmoney;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
@@ -12,18 +13,18 @@ import java.sql.Timestamp;
  * @author Thitiwut
  */
 class Userdata {
-    private Timestamp TIMESTAMP;
+    private Date TIMESTAMP;
     private String TYPE, TYPE_DES;
     private double VALUE;
     
-    public Userdata(Timestamp TIMESTAMP, String TYPE, String TYPE_DES, double VALUE){
+    public Userdata(Date TIMESTAMP, String TYPE, String TYPE_DES, double VALUE){
         this.TIMESTAMP = TIMESTAMP;
         this.TYPE = TYPE;
         this.TYPE_DES = TYPE_DES;
         this.VALUE = VALUE;
     }
 
-    public Timestamp getTIMESTAMP() {
+    public Date getTIMESTAMP() {
         return TIMESTAMP;
     }
 

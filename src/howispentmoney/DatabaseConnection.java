@@ -56,22 +56,29 @@ public class DatabaseConnection {
             
             connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
             s = connect.createStatement();
+            Calendar calendar = Calendar.getInstance();
+            java.sql.Timestamp timestampObject = new java.sql.Timestamp(calendar.getTime().getTime());
+            
             if (incomeValue == 0 && expendValue != 0){
                 tp = "Ex";
-                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','"+ex_des+"',"+expendValue+")";
+                sql = "INSERT INTO USERDATA(USERNAME, TIMESTAMP, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+timestampObject+"','"+tp+"','"+ex_des+"',"+expendValue+")";
             }else if(incomeValue != 0 && expendValue == 0){
                 tp = "In";
-                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','Income',"+incomeValue+")";
+                sql = "INSERT INTO USERDATA(USERNAME, TIMESTAMP, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+timestampObject+"','"+tp+"','Income',"+incomeValue+")";
             }else if(incomeValue != 0 && expendValue != 0){
                 tp = "In";
-                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','Income',"+incomeValue+")";
+                sql = "INSERT INTO USERDATA(USERNAME, TIMESTAMP, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+timestampObject+"','"+tp+"','Income',"+incomeValue+")";
                 s.executeUpdate(sql);
+                s.close();
                 tp = "Ex";
-                sql = "INSERT INTO USERDATA(USERNAME, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+tp+"','"+ex_des+"',"+expendValue+")";
+                sql = "INSERT INTO USERDATA(USERNAME, TIMESTAMP, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+timestampObject+"','"+tp+"','"+ex_des+"',"+expendValue+")";
             }
             s.executeUpdate(sql);//row data
+            s.close();
             System.out.println(user_name);
             System.out.println("Complete");
+            HaveDone done = new HaveDone();
+            done.setVisible(true);
             
         } catch (Exception e) {
             e.printStackTrace();
