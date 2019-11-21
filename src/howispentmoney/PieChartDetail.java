@@ -7,6 +7,7 @@ package howispentmoney;
 
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.swing.JButton;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -28,10 +29,11 @@ public class PieChartDetail extends javax.swing.JPanel {
     }
 
     private static PieDataset createDataset( ) {
-        ArrayList<Userdata> list = Activity.userData();      
+        Calendar calendar = Calendar.getInstance();        
+        ArrayList<Userdata> list = Activity.userData(calendar.get(Calendar.MONTH)+1);      
         DefaultPieDataset dataset = new DefaultPieDataset( );
         System.out.println("list : " + list.size());
-        double income_total=0, food_total=0, travel_total=0, other_total=0, clothes_total=0, utilityBills_total=0, gadget_total=0;
+        double income_total=0, food_total=0, travel_total=0, other_total=0, clothes_total=0, utilityBills_total=0, gadget_total=0, Unnecessary_total=0;
         for (int i=0; i<list.size(); i++){
             switch (list.get(i).getTYPE_DES()) {
                 case "Income":
@@ -57,6 +59,10 @@ public class PieChartDetail extends javax.swing.JPanel {
                 case "utility":
                     utilityBills_total += list.get(i).getVALUE();
                     dataset.setValue(list.get(i).getTYPE_DES(), utilityBills_total);
+                    break;
+                case "Unnecesary":
+                    Unnecessary_total += list.get(i).getVALUE();
+                    dataset.setValue(list.get(i).getTYPE_DES(), Unnecessary_total);
                     break;
                 case "Gadget":
                     gadget_total += list.get(i).getVALUE();

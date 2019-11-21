@@ -21,11 +21,12 @@ public class Activity extends javax.swing.JPanel {
      * Creates new form Activity
      */
     public Activity() {
+            Calendar calendar = Calendar.getInstance();
             initComponents();
-            show_user();
+            show_user(calendar.get(Calendar.MONTH)+1);
             System.out.println(Login.username_tf.getText());
     }
-    public static ArrayList<Userdata> userData(){
+    public static ArrayList<Userdata> userData(int numOfMonth){
         Connection connect = null;
         Statement s = null;
         String userid = null;
@@ -36,9 +37,9 @@ public class Activity extends javax.swing.JPanel {
             s = connect.createStatement();
             ResultSet rec = s.executeQuery(sql);
             Userdata theData;
-            Calendar calendar = Calendar.getInstance();
+
             while(rec.next()){
-                if (rec.getInt("MONTH")==(calendar.get(Calendar.MONTH)+1)){
+                if (rec.getInt("MONTH")==numOfMonth){
                     theData = new Userdata(rec.getDate("TIME"), rec.getString("TYPE"), rec.getString("TYPE_DES"), rec.getDouble("VALUE"));
                     userData.add(theData);
                 }
@@ -49,9 +50,10 @@ public class Activity extends javax.swing.JPanel {
         }
         return userData;
     }
-    public void show_user(){
-        ArrayList<Userdata> list = userData();
-        DefaultTableModel model = (DefaultTableModel)jTable_Display.getModel();        
+    public void show_user(int m){
+        ArrayList<Userdata> list = userData(m);
+        DefaultTableModel model = (DefaultTableModel)jTable_Display.getModel();   
+        model.setRowCount(0);
         Object[] row = new Object[4];
         for (int i=0; i<list.size(); i++){
             row[0] = list.get(i).getTIMESTAMP();
@@ -78,7 +80,7 @@ public class Activity extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_Display = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +101,12 @@ public class Activity extends javax.swing.JPanel {
 
         jLabel1.setText(DatabaseConnection.user_name);
 
-        jLabel2.setText(DatabaseConnection.getMonth());
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Month", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -117,8 +124,8 @@ public class Activity extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))))
+                            .addComponent(jLabel1)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -127,8 +134,8 @@ public class Activity extends javax.swing.JPanel {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
@@ -142,11 +149,57 @@ public class Activity extends javax.swing.JPanel {
         System.out.println("In");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        String check_month_activity = (String)jComboBox1.getSelectedItem();
+        int monthToInt;
+        switch (check_month_activity){
+            case "January":
+                show_user(1);
+                break;
+            case "Febuary":
+                show_user(2);
+                break;
+            case "March":
+                show_user(3);
+                break;
+            case "Aprill":
+                show_user(4);
+                break;
+            case "May":
+                show_user(5);
+                break;
+            case "June":
+                show_user(6);
+                break;
+            case "July":
+                show_user(7);
+                break;
+            case "August":
+                show_user(8);
+                break;
+            case "September":
+                show_user(9);
+                break;
+            case "October":
+                show_user(10);
+                break;
+            case "November":
+                show_user(11);
+                break;
+            case "December":
+                show_user(12);
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable_Display;
     // End of variables declaration//GEN-END:variables

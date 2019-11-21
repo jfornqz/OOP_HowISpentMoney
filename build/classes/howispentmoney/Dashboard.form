@@ -105,7 +105,7 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Food&quot;, &quot;Travel&quot;, &quot;Clothes&quot;, &quot;Gadget&quot;, &quot;Utility&quot;, &quot;Other&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Food&quot;, &quot;Travel&quot;, &quot;Clothes&quot;, &quot;Gadget&quot;, &quot;Utility&quot;, &quot;Other&quot;, &quot;Unnecesary&quot;})" type="code"/>
         </Property>
       </Properties>
       <AuxValues>

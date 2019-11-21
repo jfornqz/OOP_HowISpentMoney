@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -35,7 +36,8 @@ public class Dashboard extends javax.swing.JPanel {
         
     }
     public void showValue(){
-        ArrayList<Userdata> list = Activity.userData();      
+        Calendar calendar = Calendar.getInstance();
+        ArrayList<Userdata> list = Activity.userData(calendar.get(Calendar.MONTH)+1);      
         for (int i=0; i<list.size(); i++){
             switch (list.get(i).getTYPE_DES()) {
                 case "Income":
@@ -73,7 +75,7 @@ public class Dashboard extends javax.swing.JPanel {
         lb_income = new javax.swing.JLabel();
         lb_expend = new javax.swing.JLabel();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Food", "Travel", "Clothes", "Gadget", "Utility", "Other" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Food", "Travel", "Clothes", "Gadget", "Utility", "Other", "Unnecesary"}));
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
