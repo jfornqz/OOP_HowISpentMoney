@@ -5,7 +5,9 @@
  */
 package howispentmoney;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
+import javax.swing.JButton;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -16,16 +18,15 @@ import org.jfree.data.general.PieDataset;
  *
  * @author Thitiwut
  */
-public class PieChartAll extends javax.swing.JFrame {
-
+public class PieChartDetail extends javax.swing.JPanel {
     /**
-     * Creates new form PieChartAll
+     * Creates new form PieChartDetail
      */
-    public PieChartAll() {
+    public PieChartDetail() {
         initComponents();
-        this.add(new ChartPanel(createChart(createDataset())));
+        this.add(new ChartPanel(createChart(createDataset())), BorderLayout.CENTER);
     }
-    
+
     private static PieDataset createDataset( ) {
         ArrayList<Userdata> list = Activity.userData();      
         DefaultPieDataset dataset = new DefaultPieDataset( );
@@ -70,7 +71,7 @@ public class PieChartAll extends javax.swing.JFrame {
     
     private static JFreeChart createChart( PieDataset dataset ) {
         JFreeChart chart = ChartFactory.createPieChart(      
-            "Pie Chart",   // chart title 
+            "Pie Chart ",   // chart title 
             dataset,          // data    
             true,             // include legend   
             true, 
@@ -78,7 +79,6 @@ public class PieChartAll extends javax.swing.JFrame {
 
         return chart;
    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,46 +88,26 @@ public class PieChartAll extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButton1 = new javax.swing.JButton();
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+        setLayout(new java.awt.BorderLayout());
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PieChartAll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PieChartAll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PieChartAll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PieChartAll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PieChartAll().setVisible(true);
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
-    }
+        add(jButton1, java.awt.BorderLayout.PAGE_END);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Main.demo.toDash();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,8 +23,13 @@ public class CardLayoutDemo {
         cl = (CardLayout)(cards.getLayout());
         cl.show(cards, "dash");
     }
+    public void refreshDash(){
+        cards.add(new Dashboard(), "dash");
+        cl.show(cards, "dash");
+    }
     public void addChartPage(){
-        cards.add(new PieChartAll(), "chart");
+        cards.add(new PieChartDetail(), "chart");
+        cards.add(new PieChart(), "chart2");
     }
     public void addActPage(){
         cards.add(new Activity(), "act");
@@ -36,6 +41,9 @@ public class CardLayoutDemo {
         cl.show(cards, "act");
     }
     public void toChart(){
-        c1.show(cards, "chart");
+        cl.show(cards, "chart");
+    }
+    public void toChart2(){
+        cl.show(cards, "chart2");
     }
 }

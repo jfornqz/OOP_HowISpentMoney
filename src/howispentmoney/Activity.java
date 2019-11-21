@@ -55,7 +55,11 @@ public class Activity extends javax.swing.JPanel {
         Object[] row = new Object[4];
         for (int i=0; i<list.size(); i++){
             row[0] = list.get(i).getTIMESTAMP();
-            row[1] = list.get(i).getTYPE();
+            if (list.get(i).getTYPE().equals("In")){
+                row[1] = "Income";
+            }else{
+                row[1] = "Expend";
+            }
             row[2] = list.get(i).getTYPE_DES();
             row[3] = list.get(i).getVALUE();
             model.addRow(row);
