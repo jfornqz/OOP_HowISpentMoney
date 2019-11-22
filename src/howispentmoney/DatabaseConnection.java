@@ -15,7 +15,7 @@ public class DatabaseConnection {
         
         try {
             
-            connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
+            connect = DriverManager.getConnection("jdbc:derby:D:\\Git\\OOP_HowISpentMoney\\.derby\\db_hism", "", "");
             s = connect.createStatement();
             sql = "select * FROM APP.USERID WHERE USERNAME = '"+user+"' AND PASSWORD = '"+ password+"'";
             ResultSet rec = s.executeQuery(sql);//row data

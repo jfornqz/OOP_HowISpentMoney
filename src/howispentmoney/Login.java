@@ -32,6 +32,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(350, 560));
         setResizable(false);
         setSize(new java.awt.Dimension(350, 560));
@@ -47,7 +48,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(username_tf);
         username_tf.setBounds(70, 240, 210, 30);
 
-        login_bn.setBackground(new java.awt.Color(0, 204, 204));
+        login_bn.setBackground(new java.awt.Color(190, 28, 80));
         login_bn.setForeground(new java.awt.Color(255, 255, 255));
         login_bn.setText("Login");
         login_bn.setBorder(null);
@@ -87,6 +88,7 @@ public class Login extends javax.swing.JFrame {
         bg.setBounds(0, 0, 350, 560);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     
