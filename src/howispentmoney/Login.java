@@ -94,7 +94,8 @@ public class Login extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/close.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
-        jButton1.setOpaque(false);
+        jButton1.setDisabledIcon(null);
+        jButton1.setDisabledSelectedIcon(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
