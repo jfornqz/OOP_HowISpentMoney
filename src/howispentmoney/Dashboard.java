@@ -28,7 +28,7 @@ public class Dashboard extends javax.swing.JPanel {
      * Creates new form Dashboard
      */
     Calendar calendar = Calendar.getInstance();
-    double income_total, expend_total;
+    double income_total, expend_total, unnece_total;
     public Dashboard() {
         showValue();
         initComponents();
@@ -42,10 +42,12 @@ public class Dashboard extends javax.swing.JPanel {
             switch (list.get(i).getTYPE_DES()) {
                 case "Income":
                     income_total += list.get(i).getVALUE();
-                    System.out.println(list.get(i).getVALUE());
                     break;
                 default:
                     expend_total += list.get(i).getVALUE();
+                    if (list.get(i).getTYPE_DES().equals("Unnecesary")){
+                        unnece_total += list.get(i).getVALUE();
+                    }
                     break;
             }
         }
@@ -85,6 +87,7 @@ public class Dashboard extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
         lb_income = new javax.swing.JLabel();
         lb_expend = new javax.swing.JLabel();
+        lb_unness = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
@@ -311,6 +314,11 @@ public class Dashboard extends javax.swing.JPanel {
         jPanel5.add(lb_expend);
         lb_expend.setBounds(680, 150, 73, 16);
 
+        lb_unness.setForeground(new java.awt.Color(156, 161, 167));
+        lb_unness.setText("฿ "+unnece_total);
+        jPanel5.add(lb_unness);
+        lb_unness.setBounds(680, 210, 73, 16);
+
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/dbbg.jpg"))); // NOI18N
         jPanel5.add(bg);
         bg.setBounds(0, 0, 800, 600);
@@ -362,6 +370,9 @@ public class Dashboard extends javax.swing.JPanel {
         Double income = Double.parseDouble(income_tf.getText());
         Double expend = Double.parseDouble(expend_tf.getText());
         DatabaseConnection.insert_data(value, income, expend);
+        if (value.equals("Unnecesary")){
+            unnece_total += expend;
+        }
         income_total += income;
         expend_total += expend;
         Main.demo.refreshDash();
@@ -395,6 +406,7 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lb_expend;
     private javax.swing.JLabel lb_income;
+    private javax.swing.JLabel lb_unness;
     private javax.swing.JLabel month;
     private javax.swing.JLabel year;
     // End of variables declaration//GEN-END:variables
