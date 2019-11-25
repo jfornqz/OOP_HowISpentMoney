@@ -148,6 +148,7 @@ public class Dashboard extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         btn_chart1.setBackground(new java.awt.Color(190, 28, 80));
+        btn_chart1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btn_chart1.setForeground(new java.awt.Color(255, 255, 255));
         btn_chart1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/pie-chart.png"))); // NOI18N
         btn_chart1.setText("Visualise All");
@@ -160,6 +161,7 @@ public class Dashboard extends javax.swing.JPanel {
         });
 
         btn_chart2.setBackground(new java.awt.Color(190, 28, 80));
+        btn_chart2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btn_chart2.setForeground(new java.awt.Color(255, 255, 255));
         btn_chart2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/pie-chart.png"))); // NOI18N
         btn_chart2.setText("Visualise Unnes");
@@ -171,6 +173,7 @@ public class Dashboard extends javax.swing.JPanel {
         });
 
         activitybutton.setBackground(new java.awt.Color(190, 28, 80));
+        activitybutton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         activitybutton.setForeground(new java.awt.Color(255, 255, 255));
         activitybutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/statement.png"))); // NOI18N
         activitybutton.setText("View Activity");
@@ -206,19 +209,19 @@ public class Dashboard extends javax.swing.JPanel {
         );
 
         jPanel5.add(jPanel3);
-        jPanel3.setBounds(150, 500, 500, 220);
+        jPanel3.setBounds(170, 500, 500, 220);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         income_tf.setBackground(new java.awt.Color(255, 255, 255));
-        income_tf.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        income_tf.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         income_tf.setForeground(new java.awt.Color(0, 0, 0));
         income_tf.setBorder(null);
 
-        jButton1.setBackground(new java.awt.Color(31, 34, 41));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("OK");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/ok.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,6 +230,7 @@ public class Dashboard extends javax.swing.JPanel {
         });
 
         expend_tf.setBackground(new java.awt.Color(255, 255, 255));
+        expend_tf.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         expend_tf.setForeground(new java.awt.Color(0, 0, 0));
         expend_tf.setBorder(null);
 
@@ -297,12 +301,12 @@ public class Dashboard extends javax.swing.JPanel {
         jPanel4.setBounds(160, 300, 510, 200);
 
         lb_income.setForeground(new java.awt.Color(156, 161, 167));
-        lb_income.setText("Income : "+income_total);
+        lb_income.setText("฿ "+income_total);
         jPanel5.add(lb_income);
         lb_income.setBounds(680, 100, 73, 16);
 
         lb_expend.setForeground(new java.awt.Color(156, 161, 167));
-        lb_expend.setText("Expend : "+expend_total);
+        lb_expend.setText("฿ "+expend_total);
         jPanel5.add(lb_expend);
         lb_expend.setBounds(680, 150, 73, 16);
 
