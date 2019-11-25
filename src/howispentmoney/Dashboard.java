@@ -220,6 +220,7 @@ public class Dashboard extends javax.swing.JPanel {
         income_tf.setBackground(new java.awt.Color(255, 255, 255));
         income_tf.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         income_tf.setForeground(new java.awt.Color(0, 0, 0));
+        income_tf.setText("0");
         income_tf.setBorder(null);
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
@@ -236,6 +237,7 @@ public class Dashboard extends javax.swing.JPanel {
         expend_tf.setBackground(new java.awt.Color(255, 255, 255));
         expend_tf.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         expend_tf.setForeground(new java.awt.Color(0, 0, 0));
+        expend_tf.setText("0");
         expend_tf.setBorder(null);
 
         jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
