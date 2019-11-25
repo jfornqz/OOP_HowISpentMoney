@@ -63,6 +63,7 @@ public class Dashboard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -73,18 +74,25 @@ public class Dashboard extends javax.swing.JPanel {
         btn_chart1 = new javax.swing.JButton();
         btn_chart2 = new javax.swing.JButton();
         activitybutton = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        lb_income = new javax.swing.JLabel();
-        lb_expend = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         income_tf = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         expend_tf = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        lb_income = new javax.swing.JLabel();
+        lb_expend = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
+
+        jLabel3.setText("jLabel3");
 
         setBackground(new java.awt.Color(31, 34, 41));
         setForeground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
 
         jPanel5.setLayout(null);
@@ -139,21 +147,34 @@ public class Dashboard extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btn_chart1.setText("Visualize");
+        btn_chart1.setBackground(new java.awt.Color(190, 28, 80));
+        btn_chart1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_chart1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/pie-chart.png"))); // NOI18N
+        btn_chart1.setText("Visualise All");
+        btn_chart1.setBorderPainted(false);
+        btn_chart1.setIconTextGap(10);
         btn_chart1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_chart1ActionPerformed(evt);
             }
         });
 
-        btn_chart2.setText("Visualize Other");
+        btn_chart2.setBackground(new java.awt.Color(190, 28, 80));
+        btn_chart2.setForeground(new java.awt.Color(255, 255, 255));
+        btn_chart2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/pie-chart.png"))); // NOI18N
+        btn_chart2.setText("Visualise Unnes");
+        btn_chart2.setBorderPainted(false);
         btn_chart2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_chart2ActionPerformed(evt);
             }
         });
 
-        activitybutton.setText("View all activity");
+        activitybutton.setBackground(new java.awt.Color(190, 28, 80));
+        activitybutton.setForeground(new java.awt.Color(255, 255, 255));
+        activitybutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/statement.png"))); // NOI18N
+        activitybutton.setText("View Activity");
+        activitybutton.setBorderPainted(false);
         activitybutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 activitybuttonActionPerformed(evt);
@@ -165,106 +186,127 @@ public class Dashboard extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_chart1)
-                    .addComponent(btn_chart2)
-                    .addComponent(activitybutton))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(activitybutton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_chart1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_chart2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btn_chart1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_chart2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(activitybutton)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_chart1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_chart2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(activitybutton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         jPanel5.add(jPanel3);
-        jPanel3.setBounds(30, 370, 147, 137);
+        jPanel3.setBounds(150, 500, 500, 220);
 
-        lb_income.setText("Income : "+income_total);
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
-        lb_expend.setText("Expend : "+expend_total);
+        income_tf.setBackground(new java.awt.Color(255, 255, 255));
+        income_tf.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        income_tf.setForeground(new java.awt.Color(0, 0, 0));
+        income_tf.setBorder(null);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(207, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lb_income)
-                    .addComponent(lb_expend))
-                .addGap(24, 24, 24))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(lb_income)
-                .addGap(49, 49, 49)
-                .addComponent(lb_expend)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel5.add(jPanel2);
-        jPanel2.setBounds(460, 70, 304, 125);
-
-        income_tf.setText("Income");
-
-        jButton1.setText("jButton1");
+        jButton1.setBackground(new java.awt.Color(31, 34, 41));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("OK");
+        jButton1.setBorderPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        expend_tf.setText("Expend");
+        expend_tf.setBackground(new java.awt.Color(255, 255, 255));
+        expend_tf.setForeground(new java.awt.Color(0, 0, 0));
+        expend_tf.setBorder(null);
 
+        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Food", "Travel", "Clothes", "Gadget", "Utility", "Other", "Unnecesary"}));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("INCOME TODAY");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("EXPEND TODAY");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4))
                         .addGap(18, 18, 18)
-                        .addComponent(expend_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(income_tf)))
-                .addGap(15, 15, 15))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(expend_tf, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(jSeparator1)
+                            .addComponent(income_tf, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator2))))
+                .addGap(178, 178, 178))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(income_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(income_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox1)
+                            .addComponent(jLabel5)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 38, Short.MAX_VALUE)
+                        .addComponent(expend_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(expend_tf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
         jPanel5.add(jPanel4);
-        jPanel4.setBounds(480, 390, 214, 160);
+        jPanel4.setBounds(160, 300, 510, 200);
 
-        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/db_bg.jpg"))); // NOI18N
+        lb_income.setForeground(new java.awt.Color(156, 161, 167));
+        lb_income.setText("Income : "+income_total);
+        jPanel5.add(lb_income);
+        lb_income.setBounds(680, 100, 73, 16);
+
+        lb_expend.setForeground(new java.awt.Color(156, 161, 167));
+        lb_expend.setText("Expend : "+expend_total);
+        jPanel5.add(lb_expend);
+        lb_expend.setBounds(680, 150, 73, 16);
+
+        bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/dbbg.jpg"))); // NOI18N
         jPanel5.add(bg);
         bg.setBounds(0, 0, 800, 600);
 
@@ -287,17 +329,6 @@ public class Dashboard extends javax.swing.JPanel {
         
     }//GEN-LAST:event_activitybuttonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        String value = (String)jComboBox1.getSelectedItem();
-        Double income = Double.parseDouble(income_tf.getText());
-        Double expend = Double.parseDouble(expend_tf.getText());
-        DatabaseConnection.insert_data(value, income, expend);
-        income_total += income;
-        expend_total += expend;
-        Main.demo.refreshDash();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btn_chart1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chart1ActionPerformed
         // TODO add your handling code here:
             Main.demo.addChartPage();
@@ -309,6 +340,17 @@ public class Dashboard extends javax.swing.JPanel {
         Main.demo.addChartPage();
         Main.demo.toChart2();
     }//GEN-LAST:event_btn_chart2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String value = (String)jComboBox1.getSelectedItem();
+        Double income = Double.parseDouble(income_tf.getText());
+        Double expend = Double.parseDouble(expend_tf.getText());
+        DatabaseConnection.insert_data(value, income, expend);
+        income_total += income;
+        expend_total += expend;
+        Main.demo.refreshDash();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -322,11 +364,15 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lb_expend;
     private javax.swing.JLabel lb_income;
     private javax.swing.JLabel month;

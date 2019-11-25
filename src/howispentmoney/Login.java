@@ -59,7 +59,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(login_bn);
-        login_bn.setBounds(70, 340, 210, 30);
+        login_bn.setBounds(70, 340, 210, 40);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
@@ -98,14 +98,19 @@ public class Login extends javax.swing.JFrame {
         System.out.println(current_user);
         if(current_user != null) {
             Main.demo = new CardLayoutDemo();
+            Main.main_frame = new Frame();
+//            Main.main_frame.add(Main.demo);
             demo.addComponentToPane(Main.main_frame.getContentPane());
+            Main.main_frame.setSize(800, 600);
+            Main.main_frame.setResizable(false);
+            Main.main_frame.setUndecorated(true);
+            Main.main_frame.setLocationRelativeTo(null);
             Main.main_frame.setVisible(true);
             this.setVisible(false);
         } else {
-            System.out.println("no userfunl");
+            System.out.println("no user found");
             return;
         }
-//        user = DatabaseConnection.login_check(username.getText() ,password.getText());
     }//GEN-LAST:event_login_bnActionPerformed
 
     /**

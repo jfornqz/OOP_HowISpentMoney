@@ -53,7 +53,7 @@ public class PieChart extends javax.swing.JPanel {
     
     private static JFreeChart createChart( PieDataset dataset ) {
         JFreeChart chart = ChartFactory.createPieChart(      
-            "Income Vs. Ex-Other",   // chart title 
+            "Income : Unnecessary things",   // chart title 
             dataset,          // data    
             true,             // include legend   
             true, 
@@ -73,9 +73,17 @@ public class PieChart extends javax.swing.JPanel {
 
         jButton1 = new javax.swing.JButton();
 
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
         setLayout(new java.awt.BorderLayout());
 
+        jButton1.setBackground(new java.awt.Color(31, 34, 41));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back to Dashboard");
+        jButton1.setBorderPainted(false);
+        jButton1.setPreferredSize(new java.awt.Dimension(146, 40));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

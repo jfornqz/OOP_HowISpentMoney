@@ -32,7 +32,7 @@ public class Activity extends javax.swing.JPanel {
         String userid = null;
         ArrayList<Userdata> userData = new ArrayList<>();
         try{
-            connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
+            connect = DriverManager.getConnection("jdbc:derby:D:\\Git\\OOP_HowISpentMoney\\.derby\\db_hism", "", "");
             String sql = "SELECT USERNAME, DATE(TIMESTAMP) AS TIME, MONTH(TIMESTAMP) AS MONTH , TYPE, TYPE_DES, VALUE FROM APP.USERDATA WHERE USERNAME = '"+DatabaseConnection.user_name+"'";
             s = connect.createStatement();
             ResultSet rec = s.executeQuery(sql);
