@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Mon Nov 25 20:23:51 ICT 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-016e-a2bb-8fb1-000006a9e200 
-on database directory D:\Git\OOP_HowISpentMoney\.derby\db_hism with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
-Loaded from file:/D:/Program%20Files/jdk1.8.0_111/db/lib/derby.jar
+Mon Nov 25 20:52:24 ICT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): instance a816c00e-016e-a2d5-b4bc-000006823280 
+on database directory C:\Users\Thitiwut\Documents\GitHub\HowISpentMoney\.derby\db_hism with class loader sun.misc.Launcher$AppClassLoader@5451c3a8 
+Loaded from file:/C:/Program%20Files/Java/jdk1.8.0_111/db/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_111-b14
-user.dir=D:\Git\OOP_HowISpentMoney
+user.dir=C:\Users\Thitiwut\Documents\GitHub\HowISpentMoney
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

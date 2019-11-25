@@ -86,6 +86,7 @@ public class Dashboard extends javax.swing.JPanel {
         lb_income = new javax.swing.JLabel();
         lb_expend = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         jLabel3.setText("jLabel3");
 
@@ -314,6 +315,16 @@ public class Dashboard extends javax.swing.JPanel {
         jPanel5.add(bg);
         bg.setBounds(0, 0, 800, 600);
 
+        jButton2.setBackground(new java.awt.Color(31, 34, 41));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/close.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jButton2);
+        jButton2.setBounds(757, 0, 40, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -356,6 +367,10 @@ public class Dashboard extends javax.swing.JPanel {
         Main.demo.refreshDash();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Main.main_frame.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton activitybutton;
@@ -365,6 +380,7 @@ public class Dashboard extends javax.swing.JPanel {
     private javax.swing.JTextField expend_tf;
     private javax.swing.JTextField income_tf;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -29,6 +29,7 @@ public class Login extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -87,6 +88,16 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(bg);
         bg.setBounds(0, 0, 350, 560);
 
+        jButton1.setBackground(new java.awt.Color(31, 34, 41));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/close.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(287, 0, 60, 50);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -99,7 +110,6 @@ public class Login extends javax.swing.JFrame {
         if(current_user != null) {
             Main.demo = new CardLayoutDemo();
             Main.main_frame = new Frame();
-//            Main.main_frame.add(Main.demo);
             demo.addComponentToPane(Main.main_frame.getContentPane());
             Main.main_frame.setSize(800, 600);
             Main.main_frame.setResizable(false);
@@ -111,7 +121,13 @@ public class Login extends javax.swing.JFrame {
             System.out.println("no user found");
             return;
         }
+        this.dispose();
     }//GEN-LAST:event_login_bnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,6 +167,7 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bg;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -23,6 +23,7 @@ public class Frame extends javax.swing.JFrame {
      */
     public void Frame(Container pane) {
         initComponents();
+        this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
     }
     
 //    private void showDashboard(JPanel pn) {
