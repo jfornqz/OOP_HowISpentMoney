@@ -27,11 +27,12 @@ public class Login extends javax.swing.JFrame {
         username_tf = new javax.swing.JTextField();
         login_bn = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         bg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -78,20 +79,24 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(login_bn);
         login_bn.setBounds(70, 340, 210, 40);
 
+        jButton2.setBackground(new java.awt.Color(38, 41, 48));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Register");
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(70, 400, 78, 32);
+        jButton2.setBounds(70, 410, 210, 40);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("Username");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(70, 220, 60, 15);
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setText("doesn't have an accout?");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(110, 390, 140, 15);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
@@ -126,6 +131,12 @@ public class Login extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/hismlogo.png"))); // NOI18N
         getContentPane().add(jLabel4);
         jLabel4.setBounds(150, 70, 70, 70);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setText("Username");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(70, 220, 60, 15);
 
         bg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/howispentmoney/hismloginbg.jpg"))); // NOI18N
         getContentPane().add(bg);
@@ -209,9 +220,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton login_bn;
