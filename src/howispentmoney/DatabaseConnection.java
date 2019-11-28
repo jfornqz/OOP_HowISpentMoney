@@ -47,6 +47,32 @@ public class DatabaseConnection {
         System.out.println(DatabaseConnection.user_name);
         return userid;
     }
+    public static void regiserUser(String user, String password){
+        Connection connect = null;
+        Statement s = null;
+        try {
+            
+            connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
+            s = connect.createStatement();
+            sql = "INSERT INTO USERID(USERNAME, PASSWORD)"+" VALUES ('"+user+"','"+password+"')";
+
+            s.executeUpdate(sql);//row data
+            s.close();
+
+            System.out.println("Complete");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            if (connect != null) {
+                s.close();
+                connect.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }    
+    }
     public static void insert_data(String ex_des, double incomeValue, double expendValue) {
         Connection connect = null;
         Statement s = null;
@@ -62,19 +88,21 @@ public class DatabaseConnection {
             if (incomeValue == 0 && expendValue != 0){
                 tp = "Ex";
                 sql = "INSERT INTO USERDATA(USERNAME, TIMESTAMP, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+timestampObject+"','"+tp+"','"+ex_des+"',"+expendValue+")";
+                s.executeUpdate(sql);//row data
+                s.close();
             }else if(incomeValue != 0 && expendValue == 0){
                 tp = "In";
                 sql = "INSERT INTO USERDATA(USERNAME, TIMESTAMP, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+timestampObject+"','"+tp+"','Income',"+incomeValue+")";
+                s.executeUpdate(sql);//row data
+                s.close();
             }else if(incomeValue != 0 && expendValue != 0){
                 tp = "In";
                 sql = "INSERT INTO USERDATA(USERNAME, TIMESTAMP, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+timestampObject+"','"+tp+"','Income',"+incomeValue+")";
                 s.executeUpdate(sql);
                 s.close();
-                tp = "Ex";
-                sql = "INSERT INTO USERDATA(USERNAME, TIMESTAMP, TYPE, TYPE_DES, VALUE)"+"VALUES ('"+user_name+"','"+timestampObject+"','"+tp+"','"+ex_des+"',"+expendValue+")";
+                insert_data(ex_des, 0, expendValue);
             }
-            s.executeUpdate(sql);//row data
-            s.close();
+            
             System.out.println(user_name);
             System.out.println("Complete");
             HaveDone done = new HaveDone();
