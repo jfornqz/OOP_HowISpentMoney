@@ -7,7 +7,6 @@ package howispentmoney;
 
 import java.awt.*;
 import javax.swing.JPanel;
-import org.jfree.ui.RefineryUtilities;
 
 /**
  *

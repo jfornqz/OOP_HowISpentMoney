@@ -1,6 +1,7 @@
 package howispentmoney;
 
 import java.sql.*;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import java.util.Calendar;
 
@@ -14,15 +15,13 @@ public class DatabaseConnection {
         String userid = null;
         
         try {
-            
             connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
             s = connect.createStatement();
             sql = "select * FROM APP.USERID WHERE USERNAME = '"+user+"' AND PASSWORD = '"+ password+"'";
             ResultSet rec = s.executeQuery(sql);//row data
             
             while (rec.next()) {
-//                System.out.print(rec.getString(1));
-//                System.out.println(rec.getString(2));
+                System.out.println("Logging in");
                 userid = rec.getString(1);//select col
             }
             
@@ -41,25 +40,36 @@ public class DatabaseConnection {
             return null;
         }
         System.out.println("login success");
-        
-//        frame.setVisible(false);
         user_name = userid;
-        System.out.println(DatabaseConnection.user_name);
         return userid;
     }
     public static void regiserUser(String user, String password){
         Connection connect = null;
         Statement s = null;
+        int temp = 0;
         try {
             
             connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
             s = connect.createStatement();
-            sql = "INSERT INTO USERID(USERNAME, PASSWORD)"+" VALUES ('"+user+"','"+password+"')";
-
-            s.executeUpdate(sql);//row data
-            s.close();
-
-            System.out.println("Complete");
+            sql = "SELECT USERNAME FROM APP.USERID";
+            ResultSet rec = s.executeQuery(sql);
+            while(rec.next()){
+                if(rec.getString("USERNAME").equals(user)){
+                    temp = 1;
+                    UserIDused aleartWindow = new UserIDused();
+                    aleartWindow.setVisible(true);
+                    break;
+                }
+            }
+            if (temp == 0){
+                sql = "INSERT INTO USERID(USERNAME, PASSWORD)"+" VALUES ('"+user+"','"+password+"')";
+                s.executeUpdate(sql);//row data
+                s.close();
+                System.out.println("Complete");
+            }
+            else{
+                System.out.println("Incomplete");
+            }
             
         } catch (Exception e) {
             e.printStackTrace();

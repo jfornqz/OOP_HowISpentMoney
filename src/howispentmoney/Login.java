@@ -148,8 +148,7 @@ public class Login extends javax.swing.JFrame {
 
     
     private void login_bnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login_bnActionPerformed
-//        System.out.println(DatabaseConnection.login_check(username.getText() ,password.getText()));
-        String current_user = DatabaseConnection.login_check(username_tf.getText(), password.getText());
+        String current_user = DatabaseConnection.login_check(username_tf.getText(), String.valueOf(password.getPassword()));
         System.out.println(current_user);
         if(current_user != null) {
             Main.demo = new CardLayoutDemo();
