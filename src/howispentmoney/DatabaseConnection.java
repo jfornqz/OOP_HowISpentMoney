@@ -1,5 +1,6 @@
 package howispentmoney;
 
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -15,7 +16,10 @@ public class DatabaseConnection {
         String userid = null;
         
         try {
-            connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
+            java.nio.file.Path user_path = Paths.get(System.getProperty("user.dir"), ".derby").toAbsolutePath();
+            System.setProperty("derby.system.home", user_path.toString());
+            connect = DriverManager.getConnection("jdbc:derby:db_hism;");
+//            connect = DriverManager.getConnection("jdbc:derby:C:\\Users\\Thitiwut\\Documents\\GitHub\\HowISpentMoney\\.derby\\db_hism", "", "");
             s = connect.createStatement();
             sql = "select * FROM APP.USERID WHERE USERNAME = '"+user+"' AND PASSWORD = '"+ password+"'";
             ResultSet rec = s.executeQuery(sql);//row data
