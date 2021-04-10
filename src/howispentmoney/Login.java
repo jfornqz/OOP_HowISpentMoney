@@ -43,12 +43,10 @@ public class Login extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(350, 560));
         getContentPane().setLayout(null);
 
-        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setPreferredSize(new java.awt.Dimension(150, 10));
         getContentPane().add(jSeparator1);
         jSeparator1.setBounds(70, 320, 210, 10);
 
-        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setPreferredSize(new java.awt.Dimension(150, 10));
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(70, 270, 210, 10);
